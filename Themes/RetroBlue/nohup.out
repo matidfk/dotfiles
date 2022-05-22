@@ -1,0 +1,10 @@
+polybar|notice:  Parsing config file: /home/mat/.config/polybar/config.ini
+polybar|notice:  Listening for IPC messages (PID: 53792)
+polybar|notice:  Loading module 'xwindow' of type 'internal/xwindow'
+polybar|error: Disabling module "separator" (reason: Missing section "module/separator")
+polybar|notice:  Loading module 'xworkspaces' of type 'internal/xworkspaces'
+polybar|notice:  Loading module 'date' of type 'internal/date'
+polybar|notice:  Loaded 3 modules
+polybar|notice:  Loaded font "FreeSans" (name=FreeSans, offset=2, file=/usr/share/fonts/gnu-free/FreeSans.otf)
+polybar|notice:  Received signal(15): Terminated
+polybar|notice:  Termination signal received, shutting down...

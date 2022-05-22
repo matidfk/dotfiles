@@ -1,0 +1,51 @@
+configuration {
+ modi: "window,run,ssh,filebrowser";
+ kb-cancel: "Escape";
+ font: "JetBrains Mono 16";
+}
+
+window {
+    background-color: #0000008a;
+    border-radius: 10px;
+    border: 0px;
+    padding: 20px 40px;
+
+}
+
+element {
+    border-radius: 5px;
+    padding: 2px 1em;
+}
+
+element selected.normal {
+    background-color: #FFFFFF2a;
+}
+
+element normal.normal {
+    background-color: #FF000000;
+    text-color: #eaeaea;
+}
+
+element alternate.normal {
+    background-color: #FFF00000;
+    text-color: #eaeaea;
+}
+
+listview {
+    border: none;
+    margin: 0.5em 0 0 0;
+}
+
+entry {
+    placeholder-color: #eaeaea5a;
+    text-color: #eaeaea;
+}
+prompt {
+    text-color: #eaeaea;
+}
+textbox-prompt-colon {
+    text-color: #eaeaea;
+}
+textbox {
+    text-color: #eaeaea;
+}

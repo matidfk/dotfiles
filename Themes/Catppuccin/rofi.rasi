@@ -1,0 +1,59 @@
+* {
+    background-color: #F5C2E7;
+    text-color: #1E1E2E;
+}
+
+
+
+
+configuration {
+ modi: "window,run,ssh,filebrowser";
+ kb-cancel: "Escape";
+ font: "Fira Code Medium 16";
+}
+
+window {
+    background-color: @background-color;
+    border-radius: 5px;
+    border: 0px;
+    padding: 20px 40px;
+
+}
+
+element {
+    border-radius: 5px;
+    padding: 5px 1em;
+}
+
+element selected.normal {
+    background-color: @text-color;
+    text-color: @background-color;
+}
+
+element normal.normal {
+    background-color: #FF000000;
+    text-color: @text-color;
+}
+
+element alternate.normal {
+    background-color: #FFF00000;
+    text-color: @text-color;
+}
+
+listview {
+    border: none;
+    margin: 0.5em 0 0 0;
+}
+entry {
+    placeholder-color: #6E6C7E;
+    text-color: @text-color;
+}
+prompt {
+    text-color: @text-color;
+}
+textbox-prompt-colon {
+    text-color: @text-color;
+}
+textbox {
+    text-color: @text-color;
+}
