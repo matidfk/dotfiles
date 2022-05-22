@@ -1,7 +1,7 @@
 xset r rate 225 40 &
 xrandr --output eDP1 --gamma 1:1.07:1
 
-~/randomtheme.sh
+~/Scripts/randomtheme.sh
 
 
 exec feh --no-fehbg --bg-fill $(find ~/.config/feh/*.*) &
