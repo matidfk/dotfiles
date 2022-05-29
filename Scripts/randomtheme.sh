@@ -28,6 +28,7 @@ echo $THEMEDIR
 
 cd ~/Themes/$THEMEDIR
 
+# WALLPAPER
 rm ~/.config/feh/*.*
 if [[ -d ./Wallpapers ]]; then
     # /Wallpapers folder
@@ -50,7 +51,7 @@ fi
 cp ./picom.conf ~/.config/picom/picom.conf
 if [[ $(pgrep picom) ]]; then
     pkill picom
-    picom 2>/dev/null &
+    picom --experimental-backends 2>/dev/null &
 fi
 
 # KITTY

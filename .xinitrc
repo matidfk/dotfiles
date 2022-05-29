@@ -1,5 +1,7 @@
 xset r rate 225 40 &
+xset m 0 0 &
 xrandr --output eDP1 --gamma 1:1.07:1
+xrandr --output HDMI-1 --primary --auto --output VGA-1 --auto --right-of HDMI-1
 
 ~/Scripts/randomtheme.sh
 
@@ -7,7 +9,7 @@ xrandr --output eDP1 --gamma 1:1.07:1
 exec feh --no-fehbg --bg-fill $(find ~/.config/feh/*.*) &
 
 exec polybar &
-exec picom &
+exec picom --experimental-backends &
 
 exec firefox &
 exec discord &
