@@ -1,16 +1,18 @@
 #! /bin/sh
 
+# CONFIG
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d TERM WEB CODE DISC EXTRA
+bspc monitor HDMI-0 -d TERM WEB CODE DISC EXTRA
+bspc monitor VGA-0  -d MON2
 
 bspc config border_width         0
 bspc config window_gap          12
 
-bspc config split_ratio          0.54
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+bspc config split_ratio          0.5
 bspc config ignore_ewmh_focus    true
+bspc config gapless_monocle      false
+bspc config borderless_monocle   false
 
 bspc config pointer_modifier mod4
 bspc config pointer_action1 move
@@ -18,8 +20,21 @@ bspc config pointer_action2 resize_side
 bspc config pointer_action2 resize_corner
 
 bspc rule -a firefox desktop='^2' focus=off
-bspc rule -a discord desktop='^4' focus=off
+bspc rule -a discord desktop='^6' focus=off
 bspc rule -a kitty focus=on
 #bspc rule -a mplayer2 state=floating
 #bspc rule -a Kupfer.py focus=on
 #bspc rule -a Screenkey manage=off
+
+# THEME
+if [[ -f ~/.config/bspwm/theme.sh ]]; then
+    bash ~/.config/bspwm/theme.sh
+fi
+
+bspc config -m VGA-0 top_padding 0
+
+# STARTUP PROGRAMS
+polybar &
+picom --experimental-backends &
+dunst &
+exec feh --no-fehbg --bg-fill $(find ~/.config/feh/*.*) &

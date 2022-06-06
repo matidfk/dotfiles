@@ -24,11 +24,11 @@ XF86MonBrightnessUp
 
 # volume up
 XF86AudioRaiseVolume
-	pactl set-sink-volume @DEFAULT_SINK@ +10%
+	~/Scripts/volume.sh up
 
 # volume down
 XF86AudioLowerVolume
-	pactl set-sink-volume @DEFAULT_SINK@ -10%
+	~/Scripts/volume.sh down
 
 # terminal emulator
 super + Return

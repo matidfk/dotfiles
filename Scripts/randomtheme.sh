@@ -18,7 +18,7 @@
 
 
 # choose random theme
-THEMEDIR="$(ls ~/Themes | shuf -n 1)"
+THEMEDIR=$(ls ~/Themes | shuf -n 1)
  
 if [[ $1 ]]; then
     THEMEDIR=$(ls ~/Themes | grep $1 | shuf -n 1)
@@ -26,19 +26,24 @@ fi
 
 echo $THEMEDIR
 
-cd ~/Themes/$THEMEDIR
+cd ~/Themes/"$THEMEDIR"
 
 # WALLPAPER
-rm ~/.config/feh/*.*
+rm ~/.config/feh/*
 if [[ -d ./Wallpapers ]]; then
     # /Wallpapers folder
-    cp ./Wallpapers/$(ls ./Wallpapers | shuf -n 1) ~/.config/feh/
+    cp ./Wallpapers/"$(ls ./Wallpapers | shuf -n 1)" ~/.config/feh/
 else
     # wallpaper.*
-    cp ./$(ls wallpaper* | shuf -n 1) ~/.config/feh/
+    cp "./$(ls wallpaper* | shuf -n 1)" ~/.config/feh/
 fi
 feh --no-fehbg --bg-fill "$(find ~/.config/feh/*.*)"
 
+# BSPWM
+if [[ -f ./bspwm.sh ]]; then
+    cp ./bspwm.sh ~/.config/bspwm/theme.sh
+    bash ~/.config/bspwm/bspwmrc
+fi
 
 # POLYBAR
 cp ./polybar.ini ~/.config/polybar/config.ini

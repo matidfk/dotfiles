@@ -1,0 +1,17 @@
+feh
+polybar
+picom
+firefox
+discord
+kitty
+bspwm
+rofi
+sxhkd
+scrot
+xorg-xrandr
+xorg-xset
+xclip
+htop
+neofetch
+alsa-utils
+mpv

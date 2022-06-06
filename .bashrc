@@ -5,10 +5,16 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls -la --color=auto'
+alias ls='ls --color=auto'
+alias la='ls -A'
+alias ll='ls -l'
+
+alias mv='mv -i'
+alias rm='rm -i'
 LS_COLORS="di=1;4;31"
 export LS_COLORS
 
+shopt -s histappend
 
 alias please='sudo $(history -p \!\!)'
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
