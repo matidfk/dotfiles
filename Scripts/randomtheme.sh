@@ -65,6 +65,13 @@ if [[ $(pgrep kitty) ]]; then
     kill -s USR1 $(pgrep kitty)
 fi
 
+# DUNST
+cp ./dunstrc ~/.config/dunst/dunstrc
+if [[ $(pgrep dunst) ]]; then
+    kill -s USR1 $(pgrep dunst)
+    notify-send "Changed theme to $THEMEDIR"
+fi
+
 # ROFI
 cp ./rofi.rasi ~/.config/rofi/config.rasi
 

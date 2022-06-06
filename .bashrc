@@ -13,6 +13,7 @@ alias mv='mv -i'
 alias rm='rm -i'
 LS_COLORS="di=1;4;31"
 export LS_COLORS
+export PATH=$PATH:~/Scripts
 
 shopt -s histappend
 
