@@ -1,0 +1,49 @@
+configuration {
+ modi: "window,run,ssh,filebrowser";
+ kb-cancel: "Escape";
+ font: "Hack 16";
+}
+
+window {
+    background-color: #1D1F289a;
+    border: 2px;
+    border-color: #8897F4;
+    padding: 20px 40px;
+}
+
+element {
+    padding: 2px 1em;
+}
+
+element selected.normal {
+    background-color: #FFFFFF2a;
+}
+
+element normal.normal {
+    background-color: #FF000000;
+    text-color: #eaeaea;
+}
+
+element alternate.normal {
+    background-color: #FFF00000;
+    text-color: #eaeaea;
+}
+
+listview {
+    border: none;
+    margin: 0.5em 0 0 0;
+}
+
+entry {
+    placeholder-color: #eaeaea5a;
+    text-color: #eaeaea;
+}
+prompt {
+    text-color: #eaeaea;
+}
+textbox-prompt-colon {
+    text-color: #eaeaea;
+}
+textbox {
+    text-color: #eaeaea;
+}
