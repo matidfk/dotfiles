@@ -34,9 +34,9 @@ XF86AudioLowerVolume
 super + Return
 	kitty
 
-# program launcher
+# program launcher - rofi
 super + @space
-	rofi -show run
+	rofi -show run -run-shell-command
 
 # make sxhkd reload its configuration files:
 super + Escape
