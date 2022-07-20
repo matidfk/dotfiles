@@ -1,1 +1,1 @@
-feh -t -y 160 -E 90 --index-info "" $1
+feh -t -y 160 -E 90 --index-info "" -Z $1

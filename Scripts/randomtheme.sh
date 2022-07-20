@@ -47,30 +47,23 @@ fi
 
 # POLYBAR
 cp ./polybar.ini ~/.config/polybar/config.ini
-if [[ $(pgrep polybar) ]]; then
-    pkill polybar
-    polybar 2>/dev/null &
-fi
+#if [[ $(pgrep polybar) ]]; then
+#    pkill polybar
+#    polybar 2>/dev/null &
+#fi
+pkill -USR1 polybar &
 
 # PICOM
 cp ./picom.conf ~/.config/picom/picom.conf
-if [[ $(pgrep picom) ]]; then
-    pkill picom
-    picom --experimental-backends 2>/dev/null &
-fi
+pkill -USR1 picom &
 
 # KITTY
 cp ./kitty.conf ~/.config/kitty/theme.conf
-if [[ $(pgrep kitty) ]]; then
-    kill -s USR1 $(pgrep kitty)
-fi
+pkill -USR1 kitty &
 
 # DUNST
 cp ./dunstrc ~/.config/dunst/dunstrc
-if [[ $(pgrep dunst) ]]; then
-    kill -s USR1 $(pgrep dunst)
-    notify-send "Changed theme to $THEMEDIR"
-fi
+pkill -USR1 dunst &
 
 # ROFI
 cp ./rofi.rasi ~/.config/rofi/config.rasi

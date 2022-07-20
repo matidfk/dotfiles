@@ -3,8 +3,8 @@
 # CONFIG
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor HDMI-0 -d TERM WEB CODE DISC EXTRA
-bspc monitor VGA-0  -d MON2
+bspc monitor HDMI-0 -d TERM WEB CODE EXTRA
+bspc monitor VGA-0  -d DISC
 
 bspc config border_width         0
 bspc config window_gap          12
@@ -20,7 +20,7 @@ bspc config pointer_action2 resize_side
 bspc config pointer_action2 resize_corner
 
 bspc rule -a firefox desktop='^2' focus=off
-bspc rule -a discord desktop='^6' focus=off
+bspc rule -a discord desktop='^5' focus=off
 bspc rule -a kitty focus=on
 bspc rule -a feh state=floating
 #bspc rule -a mplayer2 state=floating
@@ -35,7 +35,7 @@ fi
 bspc config -m VGA-0 top_padding 0
 
 # STARTUP PROGRAMS
-polybar &
-picom --experimental-backends &
-dunst &
-exec feh --no-fehbg --bg-fill $(find ~/.config/feh/*.*) &
+polybar 2>/dev/null &
+picom --experimental-backends 2>/dev/null &
+dunst 2>/dev/null &
+exec feh --no-fehbg --bg-fill $(find ~/.config/feh/*.*) 2>/dev/null &

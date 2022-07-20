@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =0
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/hdd/System Volume Information'
+let g:netrw_dirhist_2='/home/mat/HDD/System Volume Information'
+let g:netrw_dirhist_1='/home/mat/Scripts'
 let g:netrw_dirhist_0='/home/mat/.vim'
 let g:netrw_dirhist_9='/home/mat/.config/bspwm'
 let g:netrw_dirhist_8='/etc/X11/xorg.conf.d'
@@ -7,6 +10,3 @@ let g:netrw_dirhist_7='/home/mat/.config/awesome'
 let g:netrw_dirhist_6='/home/mat/.config/picom'
 let g:netrw_dirhist_5='/home/mat/code/gtk/gtktest/src'
 let g:netrw_dirhist_4='/home/mat/.config/neofetch'
-let g:netrw_dirhist_3='/home/mat/.vim'
-let g:netrw_dirhist_2='/etc/pacman.d'
-let g:netrw_dirhist_1='/etc/grub.d'
