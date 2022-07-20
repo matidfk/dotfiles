@@ -14,7 +14,7 @@ xorg-server xorg-xinit libxft \
 bspwm sxhkd \
 picom polybar feh rofi dunst \
 firefox discord kitty mpv \
-xclip htop scrot alsa-utils man
+xclip htop scrot alsa-utils pulseaudio man
 
 # install yay AUR helper
 git clone https://aur.archlinux.org/yay.git
