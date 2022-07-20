@@ -14,7 +14,17 @@ xorg-server xorg-xinit libxft \
 bspwm sxhkd \
 picom polybar feh rofi dunst \
 firefox discord kitty mpv \
-xclip htop scrot alsa-utils man
+vscode rustup \
+xclip htop scrot alsa-utils pulseaudio man \
+ttf-fira-code ttf-jetbrains-mono ttf-hack
+
+#misc setup
+mkdir ~/Screenshots
+
+# install this font
+mkdir -p ~/.local/share/fonts/ProggyCleanSZ
+cp ~/Themes/RetroBlue/ProggyCleanSZ.ttf ~/.local/share/fonts/ProggyCleanSZ
+fc-cache
 
 # install yay AUR helper
 git clone https://aur.archlinux.org/yay.git
