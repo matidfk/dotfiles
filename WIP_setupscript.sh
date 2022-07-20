@@ -20,6 +20,7 @@ ttf-fira-code ttf-jetbrains-mono ttf-hack
 # install this font
 mkdir -p ~/.local/share/fonts/ProggyCleanSZ
 cp ~/Themes/RetroBlue/ProggyCleanSZ.ttf ~/.local/share/fonts/ProggyCleanSZ
+fc-cache
 
 # install yay AUR helper
 git clone https://aur.archlinux.org/yay.git
