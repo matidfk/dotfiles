@@ -14,8 +14,12 @@ xorg-server xorg-xinit libxft \
 bspwm sxhkd \
 picom polybar feh rofi dunst \
 firefox discord kitty mpv \
+vscode rustup \
 xclip htop scrot alsa-utils pulseaudio man \
 ttf-fira-code ttf-jetbrains-mono ttf-hack
+
+#misc setup
+mkdir ~/Screenshots
 
 # install this font
 mkdir -p ~/.local/share/fonts/ProggyCleanSZ
