@@ -18,7 +18,7 @@ xclip htop scrot alsa-utils pulseaudio man \
 ttf-fira-code ttf-jetbrains-mono ttf-hack
 
 # install this font
-mkdir ~/.local/share/fonts/ProggyCleanSZ
+mkdir -p ~/.local/share/fonts/ProggyCleanSZ
 cp ~/Themes/RetroBlue/ProggyCleanSZ.ttf ~/.local/share/fonts/ProggyCleanSZ
 
 # install yay AUR helper
