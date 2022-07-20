@@ -6,8 +6,6 @@ xrandr --output HDMI-0 --primary --auto --output VGA-0 --auto --right-of HDMI-0
 
 ~/Scripts/randomtheme.sh
 
-echo XPROFILE >> /home/mat/test.txt
-
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
   [ -x "$f" ] && . "$f"
