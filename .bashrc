@@ -17,6 +17,6 @@ export PATH=$PATH:~/Scripts
 
 shopt -s histappend
 
-alias please='sudo $(history -p \!\!)'
+alias fuck='sudo $(history -p \!\!)'
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 PS1='[\u@\h \W]\$ '
