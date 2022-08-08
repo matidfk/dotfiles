@@ -2,7 +2,8 @@
 xset r rate 225 40 &
 setxkbmap gb &
 xsetroot -cursor_name left_ptr
-xrandr --output HDMI-0 --primary --auto --output VGA-0 --auto --right-of HDMI-0
+xrandr --output HDMI-0 --primary --auto
+xrandr --output VGA-0 --auto --right-of HDMI-0
 
 ~/Scripts/randomtheme.sh
 
