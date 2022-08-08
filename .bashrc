@@ -18,7 +18,6 @@ alias rm='rm -i'
 shopt -s histappend
 
 GTK_THEME=Nordic:dark
-~/.fehbg
 
 export VISUAL="/usr/bin/vim"
 export EDITOR="/usr/bin/vim"

@@ -3,7 +3,8 @@
 #
 
 # screenshot
-Print
+# Print
+super + shift + s
 	scrot -e 'xclip -selection clipboard -t image/png -i $f' ~/Screenshots/%m%d_%H%M%S.png
 
 # screenshot but selection
@@ -11,8 +12,8 @@ ctrl + Print
 	scrot --select -e 'xclip -selection clipboard -t image/png -i $f' ~/Screenshots/%m%d_%H%M%S.png
 
 # screenshot but selection
-super + shift + s
-	scrot --select -e 'xclip -selection clipboard -t image/png -i $f' ~/Screenshots/%m%d_%H%M%S.png
+#super + shift + s
+#	scrot --select -e 'xclip -selection clipboard -t image/png -i $f' ~/Screenshots/%m%d_%H%M%S.png
 
 # backlight down
 XF86MonBrightnessDown
