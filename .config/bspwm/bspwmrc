@@ -1,0 +1,38 @@
+#! /bin/sh
+
+# CONFIG
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor HDMI-0 -d TERM WEB CODE EXTRA
+bspc monitor VGA-0  -d DISC MISC
+bspc monitor eDP-1  -d TERM WEB CODE DISC EXTRA
+
+bspc config border_width         0
+bspc config window_gap          12
+
+bspc config split_ratio          0.5
+bspc config ignore_ewmh_focus    true
+bspc config gapless_monocle      false
+bspc config borderless_monocle   false
+
+bspc config pointer_modifier mod4
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+bspc config pointer_action2 resize_corner
+
+bspc rule -a firefox desktop='^2' focus=off
+bspc rule -a discord desktop='^5' focus=off
+bspc rule -a kitty focus=on
+bspc rule -a feh state=floating
+#bspc rule -a mplayer2 state=floating
+#bspc rule -a Kupfer.py focus=on
+#bspc rule -a Screenkey manage=off
+
+
+bspc config -m VGA-0 top_padding 0
+
+# STARTUP PROGRAMS
+polybar &
+picom &
+dunst &
+conky &
