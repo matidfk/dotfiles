@@ -3,9 +3,9 @@
 # CONFIG
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor HDMI-0 -d TERM WEB CODE EXTRA
-bspc monitor VGA-0  -d DISC MISC
-bspc monitor eDP-1  -d TERM WEB CODE DISC EXTRA
+bspc monitor HDMI-0 -d 1 2 3 4 5
+bspc monitor VGA-0  -d 6 7 8 9
+bspc monitor eDP-1  -d 1 2 3 4 5 6 7 8 9
 
 bspc config border_width         0
 bspc config window_gap          12
@@ -21,7 +21,7 @@ bspc config pointer_action2 resize_side
 bspc config pointer_action2 resize_corner
 
 bspc rule -a firefox desktop='^2' focus=off
-bspc rule -a discord desktop='^5' focus=off
+bspc rule -a discord desktop='^6' focus=off
 bspc rule -a kitty focus=on
 bspc rule -a feh state=floating
 #bspc rule -a mplayer2 state=floating
