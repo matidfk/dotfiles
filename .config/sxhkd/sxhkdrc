@@ -4,16 +4,12 @@
 
 # screenshot
 # Print
-super + shift + s
+super + shift + a
 	scrot -e 'xclip -selection clipboard -t image/png -i $f' ~/Screenshots/%m%d_%H%M%S.png
 
 # screenshot but selection
-ctrl + Print
-	scrot --select -e 'xclip -selection clipboard -t image/png -i $f' ~/Screenshots/%m%d_%H%M%S.png
-
-# screenshot but selection
-#super + shift + s
-#	scrot --select -e 'xclip -selection clipboard -t image/png -i $f' ~/Screenshots/%m%d_%H%M%S.png
+super + shift + s
+    scrot --select --freeze --line mode=edge,width=2,color="#ECEff4" --exec 'xclip -selection clipboard -t image/png -i $f' ~/Screenshots/%m%d_%H%M%S.png
 
 # backlight down
 XF86MonBrightnessDown
