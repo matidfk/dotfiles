@@ -37,7 +37,7 @@ super + Return
 
 # program launcher - rofi
 super + @space
-	rofi -show combi # run -run-shell-command 'bash {cmd}'
+	rofi -show drun # run -run-shell-command 'bash {cmd}'
 
 # make sxhkd reload its configuration files:
 super + Escape
