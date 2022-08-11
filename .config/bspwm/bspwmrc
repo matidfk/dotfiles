@@ -32,7 +32,7 @@ bspc rule -a feh state=floating
 bspc config -m VGA-0 top_padding 0
 
 # STARTUP PROGRAMS
-polybar &
+polybar -r &
 picom &
 dunst &
 conky &

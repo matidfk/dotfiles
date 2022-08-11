@@ -2,14 +2,19 @@
 # wm independent hotkeys
 #
 
-# screenshot
-# Print
-super + shift + a
-	scrot -e 'xclip -selection clipboard -t image/png -i $f' ~/Screenshots/%m%d_%H%M%S.png
+# maybe extract these to a shell script
 
-# screenshot but selection
-super + shift + s
-    scrot --select --freeze --line mode=edge,width=2,color="#ECEff4" --exec 'xclip -selection clipboard -t image/png -i $f' ~/Screenshots/%m%d_%H%M%S.png
+# screenshot
+notsign
+	scrot --silent --exec 'xclip -selection clipboard -t image/png -i $f; notify-send "Screenshot saved!" "<span size=\\\"xx-small\\\">$f</span>" -i "$f" -c screenshot' ~/Screenshots/%m%d_%H%M%S.png
+
+# screenshot selection
+alt + notsign
+    scrot --select --freeze --line mode=edge,width=2,color="#ECEff4" --exec 'xclip -selection clipboard -t image/png -i $f; notify-send "Screenshot saved!" "<span size=\\\"xx-small\\\">$f</span>" -i "$f" -c screenshot' ~/Screenshots/%m%d_%H%M%S.png
+
+# screenshot window
+ctrl + notsign
+    scrot --silent --focused --border --exec 'convert $f "\(" +clone -background black -shadow 80x20+0+15 "\)" +swap -background transparent -layers merge +repage $f; xclip -selection clipboard -t image/png -i $f; notify-send "Screenshot saved!" "<span size=\\\"xx-small\\\">$f</span>" -i "$f" -c screenshot' ~/Screenshots/%m%d_%H%M%S.png
 
 # backlight down
 XF86MonBrightnessDown

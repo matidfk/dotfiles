@@ -169,8 +169,12 @@
     history_length = 20
 
 [spotify]
-    appname = Spotify
-    timeout = 2
+    desktop_entry = Spotify
+    timeout = 3
+
+[screenshot]
+    category = screenshot
+    timeout = 3
 
 [urgency_low]
     background = "#E5E9F0"
