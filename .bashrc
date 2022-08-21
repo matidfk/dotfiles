@@ -23,8 +23,8 @@ export VISUAL="/usr/bin/vim"
 export EDITOR="/usr/bin/vim"
 
 alias fuck='sudo $(history -p \!\!)'
+alias whysomuchspace='sudo du -h --max-depth=1 | sort -h'
 alias dotfiles='git --git-dir=$HOME/dotfiles.git --work-tree=$HOME'
+
 PS1='\[\033[01;34m\][\u@\h \W]\$\[\033[00;00m\] '
 . "$HOME/.cargo/env"
-
-echo TODO: push to github, sddm theme, discord theme, spotify theme, font stuff maybe, startup sound

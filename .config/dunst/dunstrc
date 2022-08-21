@@ -169,7 +169,7 @@
     history_length = 20
 
 [spotify]
-    desktop_entry = Spotify
+    desktop_entry = spotify
     timeout = 3
 
 [screenshot]
