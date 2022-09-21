@@ -21,6 +21,7 @@ cp "kitty.conf" "$HOME/.config/kitty/theme.conf"
 cp "picom.conf" "$HOME/.config/picom/picom.conf"
 cp "polybar.ini" "$HOME/.config/polybar/config.ini"
 cp "rofi.rasi" "$HOME/.config/rofi/config.rasi"
+cp -r "sddm" "/usr/local/sddm/themes/theme"
 
 pkill kitty -USR1
 pkill polybar -USR1
