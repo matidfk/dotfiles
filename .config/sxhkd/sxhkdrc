@@ -5,7 +5,7 @@
 # maybe extract these to a shell script
 
 # theme selector
-super + t
+super + ctrl + t
     theme-selector.sh
 
 # screenshot
