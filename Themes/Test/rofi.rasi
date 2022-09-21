@@ -1,0 +1,67 @@
+configuration {
+ modi: "drun";
+ kb-cancel: "Escape";
+ font: "Iosevka SemiBold 16";
+ font: "Cantarell SemiBold 16";
+}
+
+window {
+    background-color: #EC0FF4;
+    padding: 20px 40px;
+    border-radius: 5px;
+}
+
+element {
+    margin: 0.1em 10px;
+    padding: 0.1em 1em;
+    background-color: #ECEFF4;
+}
+
+element normal normal {
+    background-color: #ECEFF4;
+}
+
+element alternate normal {
+    background-color: #ECEFF4;
+}
+
+element selected normal {
+    background-color: #D8DEE9;
+    text-color: #2E3440;
+    border-radius: 5px;
+}
+
+num-filtered-rows {
+    text-color: #ff0000;
+}
+num-rows {
+    text-color: #ff0000;
+}
+#inputbar {
+    text-color: #ff0000;
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+
+listview {
+    border: none;
+    margin: 0.5em 0 0 0;
+}
+
+scrollbar {
+    handle-color: #4c566a;
+    background-color: #d8dee9;
+}
+
+entry {
+    placeholder-color: #eaeaea5a;
+    text-color: #3B4252;
+}
+prompt {
+    text-color: #3B4252;
+}
+textbox-prompt-colon {
+    text-color: #3B4252;
+}
+textbox {
+    text-color: #3B4252;
+}

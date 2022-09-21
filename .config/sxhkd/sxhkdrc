@@ -4,6 +4,10 @@
 
 # maybe extract these to a shell script
 
+# theme selector
+super + t
+    theme-selector.sh
+
 # screenshot
 {notsign,Print}
 	scrot --silent --exec 'xclip -selection clipboard -t image/png -i $f; notify-send "Screenshot saved!" "<span size=\\\"xx-small\\\">$f</span>" -i "$f" -c screenshot' ~/Screenshots/%m%d_%H%M%S.png

@@ -28,4 +28,4 @@ alias dotfiles='git --git-dir=$HOME/dotfiles.git --work-tree=$HOME'
 
 PS1='\[\033[01;34m\][\u@\h \W]\$\[\033[00;00m\] '
 . "$HOME/.cargo/env"
-export PATH=$PATH:/home/mat/.spicetify
+export PATH=$PATH:/home/mat/Scripts
