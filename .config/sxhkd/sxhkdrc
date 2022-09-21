@@ -5,15 +5,15 @@
 # maybe extract these to a shell script
 
 # screenshot
-notsign
+{notsign,Print}
 	scrot --silent --exec 'xclip -selection clipboard -t image/png -i $f; notify-send "Screenshot saved!" "<span size=\\\"xx-small\\\">$f</span>" -i "$f" -c screenshot' ~/Screenshots/%m%d_%H%M%S.png
 
 # screenshot selection
-alt + notsign
+alt + {notsign,Print}
     scrot --select --freeze --line mode=edge,width=2,color="#ECEff4" --exec 'xclip -selection clipboard -t image/png -i $f; notify-send "Screenshot saved!" "<span size=\\\"xx-small\\\">$f</span>" -i "$f" -c screenshot' ~/Screenshots/%m%d_%H%M%S.png
 
 # screenshot window
-ctrl + notsign
+ctrl + {notsign,Print}
     scrot --silent --focused --border --exec 'convert $f "\(" +clone -background black -shadow 80x20+0+15 "\)" +swap -background transparent -layers merge +repage $f; xclip -selection clipboard -t image/png -i $f; notify-send "Screenshot saved!" "<span size=\\\"xx-small\\\">$f</span>" -i "$f" -c screenshot' ~/Screenshots/%m%d_%H%M%S.png
 
 # backlight down
