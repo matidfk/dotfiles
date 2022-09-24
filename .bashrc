@@ -12,9 +12,6 @@ alias ll='ls -lh'
 # dircolors
 test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
 
-alias mv='mv -i'
-alias rm='rm -i'
-
 shopt -s histappend
 
 GTK_THEME=Nordic:dark
@@ -28,4 +25,4 @@ alias dotfiles='git --git-dir=$HOME/dotfiles.git --work-tree=$HOME'
 
 PS1='\[\033[01;34m\][\u@\h \W]\$\[\033[00;00m\] '
 . "$HOME/.cargo/env"
-export PATH=$PATH:/home/mat/Scripts
+export PATH="$PATH:/home/mat/Scripts"

@@ -6,7 +6,7 @@
 
 # theme selector
 super + ctrl + t
-    theme-selector.sh
+    $HOME/Scripts/theme-selector.sh
 
 # screenshot
 {notsign,Print}
