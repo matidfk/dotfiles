@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --bg-fill --no-fehbg $(find /usr/share/wallpapers/ -mindepth 1 | shuf -n 1)
+feh --bg-fill $(find /usr/share/wallpapers/ -mindepth 1 | shuf -n 1)
