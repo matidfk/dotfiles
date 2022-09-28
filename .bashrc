@@ -23,6 +23,6 @@ alias fuck='sudo $(history -p \!\!)'
 alias whysomuchspace='sudo du -h --max-depth=1 | sort -h'
 alias dotfiles='git --git-dir=$HOME/dotfiles.git --work-tree=$HOME'
 
-PS1='\[\033[01;34m\][\u@\h \W]\$\[\033[00;00m\] '
+PS1="$(cat $HOME/.bashprompt)"
 . "$HOME/.cargo/env"
 export PATH="$PATH:/home/mat/Scripts"
