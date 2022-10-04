@@ -35,4 +35,3 @@ bspc config -m VGA-0 top_padding 0
 polybar -r &
 picom &
 dunst &
-conky &
