@@ -25,4 +25,5 @@ alias dotfiles='git --git-dir=$HOME/dotfiles.git --work-tree=$HOME'
 
 PS1="$(cat $HOME/.bashprompt)"
 . "$HOME/.cargo/env"
+. "$HOME/.githubtoken"
 export PATH="$PATH:/home/mat/Scripts"
