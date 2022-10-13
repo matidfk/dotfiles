@@ -26,4 +26,5 @@ alias fixbrightness='sudoedit /sys/class/backlight/amdgpu_bl0/brightness'
 
 PS1="$(cat $HOME/.bashprompt)"
 . "$HOME/.cargo/env"
+. "$HOME/.githubtoken"
 export PATH="$PATH:/home/mat/Scripts"
