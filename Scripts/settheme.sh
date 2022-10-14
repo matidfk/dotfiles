@@ -45,4 +45,4 @@ pkill polybar -USR1
 pkill picom -USR1
 pkill dunst -USR1
 pkill conky -USR1
-$HOME/Scripts/randombg.sh
+$HOME/.fehbg
