@@ -4,6 +4,9 @@
 
 # maybe extract these to a shell script
 
+super + {_,shift +}Return
+	{kitty, bspc rule -a \* -o state=floating sticky=on layer=above rectangle=720x360+600+57 && kitty -c $HOME/.config/kitty/scratchpad.conf}
+
 # theme selector
 super + ctrl + t
     $HOME/Scripts/theme-selector.sh
