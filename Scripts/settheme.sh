@@ -29,8 +29,19 @@ message=$(
     cp "rofi.rasi" "$HOME/.config/rofi/config.rasi" 2>&1
     cp "conky.conf" "$HOME/.config/conky/conky.conf" 2>&1
     cp "bashprompt" "$HOME/.bashprompt" 2>&1
+    cp "bspwmthemerc" "$HOME/.config/bspwm/themerc" 2>&1
+    sed -i "/theme/c theme = \"$(cat helixtheme)\"" "$HOME/.config/helix/config.toml" 2>&1
     sudo rm /usr/share/wallpapers/* 2>&1
     sudo cp Wallpapers/* "/usr/share/wallpapers" 2>&1
+
+     # Reload configs
+    pkill kitty -USR1 2>&1
+    pkill polybar -USR1 2>&1
+    pkill picom -USR1 2>&1
+    pkill dunst -USR1 2>&1
+    pkill conky -USR1 2>&1
+    $HOME/.fehbg 2>&1
+    $HOME/.config/bspwm/themerc 2>&1
     sudo cp -r "sddm" "/usr/share/sddm/themes/theme" 2>&1
 )
 
@@ -39,10 +50,3 @@ if [[ ! $message == "" ]]; then
     rofi -e "$message"
 fi
 
-# Reload configs
-pkill kitty -USR1
-pkill polybar -USR1
-pkill picom -USR1
-pkill dunst -USR1
-pkill conky -USR1
-$HOME/.fehbg

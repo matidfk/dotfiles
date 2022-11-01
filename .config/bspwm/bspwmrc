@@ -34,10 +34,10 @@ bspc rule -a discord desktop='^6' focus=off
 bspc rule -a -o kitty focus=on
 bspc rule -a feh state=floating
 bspc rule -a school state=floating
-#bspc rule -a mplayer2 state=floating
-#bspc rule -a Kupfer.py focus=on
-#bspc rule -a Screenkey manage=off
 
+if [[ -f ./themerc ]]; then
+  ./themerc
+fi
 
 bspc config -m VGA-0 top_padding 0
 

@@ -1,0 +1,54 @@
+configuration {
+ modi: "drun";
+ kb-cancel: "Escape";
+ font: "Cantarell SemiBold 16";
+}
+
+window {
+    background-color: #ECEFF4;
+    padding: 20px 40px;
+    border-radius: 5px;
+}
+
+element {
+    margin: 0.1em 10px;
+    padding: 0.1em 1em;
+}
+
+element normal normal {
+    background-color: #00000000;
+}
+
+element alternate normal {
+    background-color: #00000000;
+}
+
+element selected normal {
+    background-color: #D8DEE9;
+    text-color: #2E3440;
+    border-radius: 5px;
+}
+
+listview {
+    border: none;
+    margin: 0.5em 0 0 0;
+}
+
+scrollbar {
+    handle-color: #4c566a;
+    background-color: #d8dee9;
+}
+
+entry {
+    placeholder-color: #D8DEE9;
+    text-color: #3B4252;
+}
+prompt {
+    text-color: #3B4252;
+}
+textbox-prompt-colon {
+    text-color: #3B4252;
+}
+textbox {
+    text-color: #3B4252;
+}
