@@ -35,8 +35,8 @@ bspc rule -a -o kitty focus=on
 bspc rule -a feh state=floating
 bspc rule -a school state=floating
 
-if [[ -f ./themerc ]]; then
-  ./themerc
+if [[ -f "${BASH_SOURCE%/*}/themerc" ]]; then
+  "${BASH_SOURCE%/*}/themerc"
 fi
 
 bspc config -m VGA-0 top_padding 0
