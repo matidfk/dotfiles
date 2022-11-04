@@ -17,8 +17,6 @@ fi
 cd $THEMES_DIR/$1
 message=$(
     cp "dunstrc" "$HOME/.config/dunst/dunstrc" 2>&1
-#    cp "gtk3.ini" "$HOME/.config/gtk-3.0/settings.ini" 2>&1
-#    cp "gtk4.ini" "$HOME/.config/gtk-4.0/settings.ini" 2>&1
     sudo rm -r "/usr/share/themes/Default/gtk-2.0" 2>&1
     sudo rm -r "/usr/share/themes/Default/gtk-3.0" 2>&1
     sudo cp -r "gtk-3.0" "/usr/share/themes/Default" 2>&1
@@ -42,7 +40,6 @@ message=$(
     pkill conky -USR1 2>&1
     $HOME/.fehbg 2>&1
     $HOME/.config/bspwm/themerc 2>&1
-    sudo cp -r "sddm" "/usr/share/sddm/themes/theme" 2>&1
 )
 
 # Display error message if any
