@@ -2,11 +2,6 @@
 # wm independent hotkeys
 #
 
-# maybe extract these to a shell script
-
-super + {_,shift +}Return
-	{kitty, bspc rule -a \* -o state=floating sticky=on layer=above rectangle=720x360+600+57 && kitty -c $HOME/.config/kitty/scratchpad.conf}
-
 # theme selector
 super + ctrl + t
     $HOME/Scripts/theme-selector.sh
@@ -84,8 +79,11 @@ super + g
 #
 
 # set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+super + {t,shift + t,s}
+	bspc node -t {tiled,pseudo_tiled,floating} && polybar-msg cmd show
+
+super + f
+  bspc node -t fullscreen && polybar-msg cmd hide
 
 # set the node flags
 super + ctrl + {m,x,y,z}
