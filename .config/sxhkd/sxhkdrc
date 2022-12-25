@@ -42,9 +42,9 @@ XF86AudioMute
 super + Return
 	kitty
 
-# program launcher - rofi
+# rofi app launcher
 super + @space
-	rofi -show drun # run -run-shell-command 'bash {cmd}'
+	rofi -show drun -theme launcher.rasi
 
 # make sxhkd reload its configuration files:
 super + Escape
