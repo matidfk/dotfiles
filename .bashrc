@@ -16,8 +16,8 @@ shopt -s histappend
 
 GTK_THEME=Nordic:dark
 
-export VISUAL="/usr/bin/helix"
-export EDITOR="/usr/bin/helix"
+export VISUAL="/usr/bin/nvim"
+export EDITOR="/usr/bin/nvim"
 export STATUSBAR=polybar
 
 alias fuck='sudo $(history -p \!\!)'

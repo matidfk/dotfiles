@@ -1,60 +1,82 @@
 #!/bin/sh
-THEMES_DIR="$HOME/Themes"
+themes_dir="$HOME/Themes"
+config_dir="$HOME/.config"
+
+theme=$1
 
 # Quit if no argument
-if [[ $1 == "" ]]; then
+if [[ $theme == "" ]]; then
     # rofi -e "Please supply theme name"
-    exit 0
+    exit 1
 fi
 
 # Quit if theme doesn't exist
-if [ ! -d "$THEMES_DIR/$1" ]; then
-    rofi -e "Theme $1 does not exist"
-    exit 0
+if [ ! -d "$themes_dir/$theme" ]; then
+    >&2 echo "Theme $theme does not exist"
+    exit 1
 fi
 
-# Copy configs
-cd $THEMES_DIR/$1
-message=$(
-  # dunst
-  cp "dunstrc" "$HOME/.config/dunst/dunstrc" 2>&1
-  # gtk
+files=(
+  "dunstrc        $config_dir/dunst/dunstrc"
+  "kitty.conf     $config_dir/kitty/theme.conf"
+  "picom.conf     $config_dir/picom/picom.conf"
+  "polybar.ini    $config_dir/polybar/config.ini"
+  "rofi.rasi      $config_dir/rofi/config.rasi"
+  "launcher.rasi  $config_dir/rofi/launcher.rasi"
+  "powermenu.rasi $config_dir/rofi/powermenu.rasi"
+  "conky.conf     $config_dir/conky/conky.conf"
+  "bashprompt     $HOME/.bashprompt"
+  "bspwmthemerc   $config_dir/bspwm/themerc"
+)
+
+cd $themes_dir/$theme
+
+# check files exist
+for f in "${files[@]}"; do
+  file=($f)
+  source_file="${file[0]}"
+  dest_file="${file[1]}"
+  if ! [ -f "$source_file" ]; then
+    >&2 echo "source file $source_file does not exist!"
+    exit 1
+  fi
+done
+
+# create symbolic links
+message=""
+
+for f in "${files[@]}"; do
+  file=($f)
+  source_file="${file[0]}"
+  dest_file="${file[1]}"
+  error=$(ln -sf "$themes_dir/$theme/$source_file" "$dest_file" 2>&1)
+  if [ -z "$error" ]; then
+    message+=$'\n'"$error"
+  fi
+done
+
+# other stuff
+message+=$(
   sudo rm -r "/usr/share/themes/Default/gtk-2.0" 2>&1
   sudo rm -r "/usr/share/themes/Default/gtk-3.0" 2>&1
   sudo cp -r "gtk-3.0" "/usr/share/themes/Default" 2>&1
   sudo cp -r "gtk-2.0" "/usr/share/themes/Default" 2>&1
-  # kitty
-  cp "kitty.conf" "$HOME/.config/kitty/theme.conf" 2>&1
-  # picom
-  cp "picom.conf" "$HOME/.config/picom/picom.conf" 2>&1
-  # polybar
-  cp "polybar.ini" "$HOME/.config/polybar/config.ini" 2>&1
-  # rofi
-  cp "rofi.rasi" "$HOME/.config/rofi/config.rasi" 2>&1
-  cp "launcher.rasi" "$HOME/.config/rofi/launcher.rasi" 2>&1
-  cp "powermenu.rasi" "$HOME/.config/rofi/powermenu.rasi" 2>&1
-  # conky
-  cp "conky.conf" "$HOME/.config/conky/conky.conf" 2>&1
-  # bash prompt
-  cp "bashprompt" "$HOME/.bashprompt" 2>&1
-  # bspwm
-  cp "bspwmthemerc" "$HOME/.config/bspwm/themerc" 2>&1
   # wallpapers
-  sudo rm /usr/share/wallpapers/* 2>&1
+  sudo rm -r /usr/share/wallpapers/* 2>&1
   sudo cp Wallpapers/* "/usr/share/wallpapers" 2>&1
 
    # Reload configs
   pkill kitty -USR1 2>&1
-  pkill picom -USR1 2>&1
   pkill dunst -USR1 2>&1
   pkill conky -USR1 2>&1
   pkill polybar -USR1 2>&1
+  pkill picom -USR1 2>&1
   $HOME/.fehbg 2>&1
   $HOME/.config/bspwm/themerc 2>&1
 )
 
 # Display error message if any
-if [[ ! $message == "" ]]; then
-    rofi -e "$message"
+if [[ -z "$message" ]]; then
+  >&2 echo "$message"
 fi
 
