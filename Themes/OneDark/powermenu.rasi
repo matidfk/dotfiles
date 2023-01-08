@@ -12,16 +12,16 @@ configuration {
     show-icons:                 false;
 }
 
-* {
-    background:     #2E3440FF;
-    background-alt: #383E4AFF;
-    foreground:     #E5E9F0FF;
-    selected:       #81A1C1FF;
-    active:         #A3BE8CFF;
-    urgent:         #BF616AFF;
-    font: "Fira Sans 12";
-}
+/*****----- Global Properties -----*****/
 
+* {
+    background-alt:     #1E2127FF;
+    background: #282B31FF;
+    foreground:     #FFFFFFFF;
+    selected:       #61AFEFFF;
+    active:         #98C379FF;
+    urgent:         #E06C75FF;
+}
 
 /*
 USE_BUTTONS=YES
@@ -29,19 +29,22 @@ USE_BUTTONS=YES
 
 /*****----- Main Window -----*****/
 window {
+
+    font: "Iosevka 10";
     /* properties for window widget */
+
     transparency:                "real";
-    location:                    center;
-    anchor:                      center;
+    location:                    east;
+    anchor:                      east;
     fullscreen:                  false;
-    width:                       560px;
-    x-offset:                    0px;
+    width:                       115px;
+    x-offset:                    -40px;
     y-offset:                    0px;
 
     /* properties for all widgets */
     enabled:                     true;
     margin:                      0px;
-    padding:                     20px;
+    padding:                     0px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
@@ -54,18 +57,18 @@ mainbox {
     enabled:                     true;
     spacing:                     15px;
     margin:                      0px;
-    padding:                     0px;
+    padding:                     15px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
     background-color:            transparent;
-    children:                    [ "message", "listview" ];
+    children:                    [ "listview" ];
 }
 
 /*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
-    spacing:                     15px;
+    spacing:                     0px;
     margin:                      0px;
     padding:                     0px;
     border:                      0px;
@@ -101,9 +104,9 @@ prompt {
 message {
     enabled:                     true;
     margin:                      0px;
-    padding:                     15px;
+    padding:                     12px;
     border:                      0px solid;
-    border-radius:               10px;
+    border-radius:               0px;
     border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  @foreground;
@@ -129,14 +132,14 @@ error-message {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     3;
-    lines:                       1;
+    columns:                     1;
+    lines:                       5;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
-    fixed-height:                true;
+    fixed-height:                false;
     fixed-columns:               true;
     
     spacing:                     15px;
@@ -155,16 +158,16 @@ element {
     enabled:                     true;
     spacing:                     0px;
     margin:                      0px;
-    padding:                     45px 10px;
+    padding:                     20px 0px;
     border:                      0px solid;
-    border-radius:               10px;
+    border-radius:               0px;
     border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  @foreground;
     cursor:                      pointer;
 }
 element-text {
-    font:                        "feather bold 32";
+    font:                        "feather bold 24";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

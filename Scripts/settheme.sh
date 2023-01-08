@@ -65,6 +65,10 @@ message+=$(
   sudo rm -r /usr/share/wallpapers/* 2>&1
   sudo cp Wallpapers/* "/usr/share/wallpapers" 2>&1
 
+
+  bspc config top_padding 0
+  bspc config bottom_padding 0
+
    # Reload configs
   pkill kitty -USR1 2>&1
   pkill dunst -USR1 2>&1
