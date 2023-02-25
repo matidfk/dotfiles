@@ -27,6 +27,7 @@ files=(
   "conky.conf     $config_dir/conky/conky.conf"
   "bashprompt     $HOME/.bashprompt"
   "bspwmthemerc   $config_dir/bspwm/themerc"
+  "nvim.lua       $config_dir/nvim/after/plugin/colorscheme.lua"
 )
 
 cd $themes_dir/$theme
