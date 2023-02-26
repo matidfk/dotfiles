@@ -1,2 +1,11 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill $(find /usr/share/wallpapers/ -mindepth 1 | shuf -n 1)
+
+picked=$(find /usr/share/wallpapers/ -mindepth 1 | shuf -n 1)
+
+if [[ $picked == *.multi.* ]]; then
+    feh --no-fehbg --bg-fill --no-xinerama $picked
+else
+    feh --no-fehbg --bg-fill $picked
+fi
+
+

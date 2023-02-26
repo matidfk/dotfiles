@@ -1,4 +1,4 @@
-require("nvim-tree").setup{
+require("nvim-tree").setup {
     hijack_cursor = true,
 
     modified = {
@@ -8,21 +8,27 @@ require("nvim-tree").setup{
     git = {
         enable = false
     },
+
+    diagnostics = {
+        enable = true,
+        show_on_dirs = true,
+        show_on_open_dirs = false,
+    }
 }
 
 local function open_nvim_tree(data)
-  -- buffer is a directory
-  local directory = vim.fn.isdirectory(data.file) == 1
+    -- buffer is a directory
+    local directory = vim.fn.isdirectory(data.file) == 1
 
-  if not directory then
-    return
-  end
+    if not directory then
+        return
+    end
 
-  -- change to the directory
-  vim.cmd.cd(data.file)
+    -- change to the directory
+    vim.cmd.cd(data.file)
 
-  -- open the tree
-  require("nvim-tree.api").tree.open()
+    -- open the tree
+    require("nvim-tree.api").tree.open()
 end
 
 -- open on startup

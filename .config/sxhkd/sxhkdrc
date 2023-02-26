@@ -1,6 +1,10 @@
 #
 # wm independent hotkeys
 #
+#
+# change wallpaper
+super + ctrl + w
+    $HOME/.fehbg
 
 # theme selector
 super + ctrl + t

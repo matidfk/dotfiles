@@ -58,10 +58,6 @@ done
 
 # other stuff
 message+=$(
-  sudo rm -r "/usr/share/themes/Default/gtk-2.0" 2>&1
-  sudo rm -r "/usr/share/themes/Default/gtk-3.0" 2>&1
-  sudo cp -r "gtk-3.0" "/usr/share/themes/Default" 2>&1
-  sudo cp -r "gtk-2.0" "/usr/share/themes/Default" 2>&1
   # wallpapers
   sudo rm -r /usr/share/wallpapers/* 2>&1
   sudo cp Wallpapers/* "/usr/share/wallpapers" 2>&1

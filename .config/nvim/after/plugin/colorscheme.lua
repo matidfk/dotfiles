@@ -1,1 +1,1 @@
-/home/mat/Themes/Grayscale/nvim.lua
+/home/mat/Themes/Nord/nvim.lua

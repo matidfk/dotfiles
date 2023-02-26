@@ -1,4 +1,6 @@
-require 'bufferline'.setup()
+require 'bufferline'.setup {
+    diagnostics = { { enabled = true }, { enabled = true }, { enabled = true }, { enabled = true } }
+}
 
 local nvim_tree_events = require('nvim-tree.events')
 local bufferline_api = require('bufferline.api')
@@ -19,6 +21,11 @@ nvim_tree_events.subscribe('TreeClose', function()
     bufferline_api.set_offset(0)
 end)
 
-
+-- Move to previous/next
 vim.keymap.set('n', '<A-,>', '<Cmd>BufferPrevious<CR>')
 vim.keymap.set('n', '<A-.>', '<Cmd>BufferNext<CR>')
+
+-- Pin/unpin buffer
+vim.keymap.set('n', '<A-p>', '<Cmd>BufferPin<CR>')
+-- Close buffer
+vim.keymap.set('n', '<A-c>', '<Cmd>BufferClose<CR>')
