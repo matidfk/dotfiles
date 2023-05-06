@@ -1,5 +1,7 @@
 require 'bufferline'.setup {
+    icons = {
     diagnostics = { { enabled = true }, { enabled = true }, { enabled = true }, { enabled = true } }
+    }
 }
 
 local nvim_tree_events = require('nvim-tree.events')
