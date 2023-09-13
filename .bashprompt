@@ -1,0 +1,7 @@
+#!/bin/sh
+# \e[0;32m is color
+WHITE="\e[0;39m"
+GREEN="\e[0;32m"
+BLUE="\e[0;34m"
+RESET="\e[0m"
+PS1="$WHITE[$BLUE\u $WHITE:: $GREEN\W$WHITE]\$ $RESET"
