@@ -25,20 +25,10 @@ alias whysomuchspace='sudo du -h --max-depth=1 | sort -h'
 alias dotfiles='git --git-dir=$HOME/dotfiles.git --work-tree=$HOME'
 alias fixbrightness='sudoedit /sys/class/backlight/amdgpu_bl0/brightness'
 
-hx () {
-    kitty @ set-spacing padding=0
-    helix $@
-    kitty @ set-spacing padding=10
-}
+[[ -f ~/.bashprompt ]] && . ~/.bashprompt
 
-nv () {
-    kitty @ set-spacing padding=0
-    nvim $@
-    kitty @ set-spacing padding=10
-}
+#PS1="$(cat $HOME/.bashprompt)"
 
-
-PS1="$(cat $HOME/.bashprompt)"
 . "$HOME/.cargo/env"
 . "$HOME/.githubtoken"
 export PATH="$PATH:/home/mat/Scripts"
