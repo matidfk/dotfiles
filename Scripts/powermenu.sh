@@ -8,21 +8,21 @@ reboot=''
 logout=''
 
 # Rofi CMD
-rofi_cmd() {
-	rofi -dmenu \
+wofi_cmd() {
+	wofi -dmenu \
 		-mesg "Uptime: $uptime" \
-		-theme "$HOME/.config/rofi/powermenu.rasi"
+		-theme "$HOME/.config/wofi/powermenu.rasi"
 }
 
 
 # Pass variables to rofi dmenu
-run_rofi() {
-	echo -e "$shutdown\n$reboot\n$logout" | rofi_cmd
+run_wofi() {
+	echo -e "$shutdown\n$reboot\n$logout" | wofi_cmd
 }
 
 
 # Actions
-chosen="$(run_rofi)"
+chosen="$(run_wofi)"
 case ${chosen} in
     $shutdown)
       systemctl poweroff

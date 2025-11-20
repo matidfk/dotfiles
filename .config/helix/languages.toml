@@ -1,8 +1,0 @@
-[[language]]
-name = "rust"
-auto-format = true
-config = { procMacro = { enable = true }}
-
-[[language]]
-name = "c-sharp"
-language-server = { command = "omnisharp" }

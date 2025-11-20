@@ -17,16 +17,19 @@ if [ ! -d "$themes_dir/$theme" ]; then
 fi
 
 files=(
+  "waybar.css"    $config_dir/waybar/style.css"
+  "hyprland.conf" $config_dir/hypr/theme.conf"
   "dunstrc        $config_dir/dunst/dunstrc"
   "kitty.conf     $config_dir/kitty/theme.conf"
-  "picom.conf     $config_dir/picom/picom.conf"
-  "polybar.ini    $config_dir/polybar/config.ini"
-  "rofi.rasi      $config_dir/rofi/config.rasi"
-  "launcher.rasi  $config_dir/rofi/launcher.rasi"
-  "powermenu.rasi $config_dir/rofi/powermenu.rasi"
-  "conky.conf     $config_dir/conky/conky.conf"
+  # "picom.conf     $config_dir/picom/picom.conf"
+  # "polybar.ini    $config_dir/polybar/config.ini"
+  # "rofi.rasi      $config_dir/rofi/config.rasi"
+  # "launcher.rasi  $config_dir/rofi/launcher.rasi"
+  # "powermenu.rasi $config_dir/rofi/powermenu.rasi"
+  "wofi poo"
+  # "conky.conf     $config_dir/conky/conky.conf"
   "bashprompt     $HOME/.bashprompt"
-  "bspwmthemerc   $config_dir/bspwm/themerc"
+  # "bspwmthemerc   $config_dir/bspwm/themerc"
   "nvim.lua       $config_dir/nvim/after/plugin/colorscheme.lua"
 )
 

@@ -41,3 +41,17 @@ vim.opt.fillchars:append({ fold = " " })
 
 -- format on save
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function ()
+        vim.defer_fn(function()
+            vim.cmd("silent !kitty @ set-spacing padding=0")
+        end, 10)
+    end,
+})
+
+vim.api.nvim_create_autocmd("VimLeave", {
+    callback = function ()
+        vim.cmd("silent !kitty @ set-spacing padding=default")
+    end,
+})
