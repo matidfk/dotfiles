@@ -1,0 +1,130 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "height": 30,
+    "spacing": 4,
+    "output": "DP-3",
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/media",
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "wireplumber",
+        "network",
+        "cpu",
+        "memory",
+        "clock",
+        "tray",
+        "custom/power"
+    ],
+    "hyprland/workspaces": {
+        "active-only": false,
+        "all-outputs": true,
+        "persistent-workspaces": {
+            "DP-3": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+        },
+        "format": "{icon}",
+        "format-icons": {
+            // "1": "",
+            // "2": "",
+            // "3": "",
+            // "6": "",
+            // "7": "",
+        },
+    },
+    "tray": {
+        "spacing": 6,
+    },
+    "clock": {
+        "tooltip-format": "<tt><span font='Jetbrains Mono'>{calendar}</span></tt>",
+        "format-alt": "{:%A, %d. %B %Y}",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "format": {
+                "days": "<span color='#939BAA'>{}</span>",
+                "weekdays": "<span color='#4C566A'>{}</span>",
+                "months": "<span color='#4C566A'>{}</span>",
+                "today": "<span color='#2E3440'><b><u>{}</u></b></span>"
+            },
+
+        },
+        "actions": {
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+
+    },
+    "cpu": {
+        "format": "  {usage}%",
+        "on-click": "hyprctl dispatch exec '[float; size 1280 720] kitty sh -c btop'"
+    },
+    "memory": {
+        "format": "  {}%"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "  {essid} ({signalStrength}%)",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "wireplumber": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": " Muted",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "hyprctl dispatch exec [float] pavucontrol",
+        "scroll-step": 5.0,
+    },
+    "custom/media": {
+        "format": "{text} {icon}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "/usr/bin/python3 $HOME/.config/waybar/custom_modules/mediaplayer.py 2> /dev/null" // Script in resources folder
+    },
+    "custom/power": {
+        "format" : "⏻",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-actions": {
+			"shutdown": "shutdown now",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate"
+		}
+    },
+    "custom/spotify": {
+        "exec": "/usr/bin/python3 $HOME/.config/waybar/custom_modules/mediaplayer.py --player spotify",
+        "format": " {}",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+    },
+}

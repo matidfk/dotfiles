@@ -1,0 +1,140 @@
+@define-color nord0 #2e3440;
+@define-color nord1 #3b4252;
+@define-color nord2 #434c5e;
+@define-color nord3 #4c566a;
+@define-color nord4 #d8dee9;
+@define-color nord5 #e5e9f0;
+@define-color nord6 #eceff4;
+@define-color nord7 #8fbcbb;
+@define-color nord8 #88c0d0;
+@define-color nord9 #81a1c1;
+@define-color nord10 #5e81ac;
+@define-color nord11 #bf616a;
+@define-color nord12 #d08770;
+@define-color nord13 #ebcb8b;
+@define-color nord14 #a3be8c;
+@define-color nord15 #b48ead;
+
+
+/* === GENERAL ===*/
+
+* {
+    font-family: Rubik, FontAwesome;
+    font-size: 14px;
+    text-shadow: none;
+}
+
+window#waybar {
+    background-color: @nord6;
+    color: @nord0;
+}
+
+window#waybar > box {
+    padding: 7px 12px;
+    padding-bottom: 5px;
+}
+
+button {
+    box-shadow: none;
+    border: none;
+    border-radius: 100px;
+}
+
+
+widget > * {
+    padding: 0 10px;
+    color: @nord0;
+    border-radius: 100px;
+    background-color: @nord4;
+    margin: 0 2px;
+}
+
+
+/* === WORKSPACES ===*/
+
+#workspaces button {
+    padding: 2px 6px;
+    margin: 0 2px;
+    background-color: transparent;
+}
+
+#workspaces button:hover {
+    background: #c4cbd7;
+    transition-duration: 0.1s;
+}
+
+
+#workspaces button:first-child {
+    margin-left: -10px;
+}
+
+#workspaces button:last-child {
+    margin-right: -10px;
+}
+
+#workspaces button.focused, #workspaces button.active {
+    background-color: @nord0;
+    color: @nord6;
+}
+
+#workspaces button.urgent {
+    background-color: @nord11;
+}
+
+#workspaces button.empty {
+    color: #939baa;
+}
+
+
+/* === MISC ===*/
+
+tooltip {
+    background: @nord4;
+    border: 1px solid @nord3;
+    border-radius: 14px;
+}
+
+tooltip label {
+    color: @nord3;
+    padding: 0;
+}
+
+#custom-power {
+    margin-right: 6px;
+}
+
+/* window title in middle */
+#window {
+    background-color: inherit;
+
+}
+
+#network.disconnected {
+    background-color: @nord11;
+}
+
+
+#temperature.critical {
+    background-color: @nord11;
+}
+
+#wireplumber.muted {
+    color: #939baa;
+}
+
+#tray > * > * {
+    padding: 0;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @nord11;
+}
+
+#calendar {
+    font-family: Rubik;
+}

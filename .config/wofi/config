@@ -1,0 +1,16 @@
+style = /home/mat/.config/wofi/style.css
+
+width = 700
+height = 400
+
+show = drun
+prompt = Search...
+insensitive = true
+
+allow_markup = true
+
+halign = fill
+no_actions = true
+content_halign = fill
+allow_images = true
+image_size = true

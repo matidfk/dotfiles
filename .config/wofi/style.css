@@ -1,0 +1,71 @@
+@define-color nord0 #2e3440;
+@define-color nord1 #3b4252;
+@define-color nord2 #434c5e;
+@define-color nord3 #4c566a;
+@define-color nord4 #d8dee9;
+@define-color nord5 #e5e9f0;
+@define-color nord6 #eceff4;
+@define-color nord7 #8fbcbb;
+@define-color nord8 #88c0d0;
+@define-color nord9 #81a1c1;
+@define-color nord10 #5e81ac;
+@define-color nord11 #bf616a;
+@define-color nord12 #d08770;
+@define-color nord13 #ebcb8b;
+@define-color nord14 #a3be8c;
+@define-color nord15 #b48ead;
+
+* {
+    font-family: Rubik;
+}
+
+window {
+    background-color: @nord6;
+    border-radius: 12px;
+    color: @nord0;
+}
+
+#outer-box {
+    margin: 12px;
+}
+
+
+#input {
+    border-radius: 12px;
+    border: none;
+    color: @nord0;
+    background-color: @nord4;
+    font-weight: bold;
+    outline: none;
+    margin: 12px;
+    padding: 4px 16px;
+}
+
+/* hide search icon*/
+/* #input image:first-child { */
+/*     margin-left: -100px; */
+/* } */
+
+#inner-box {
+    margin: 4px;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+#img {
+    margin: 20px 40px;
+    /* margin-right: 40px; */
+}
+
+#entry {
+    margin: 0;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+}
+
+#entry:selected {
+    background-color: @nord3;
+    color: @nord6;
+    outline: none;
+}
