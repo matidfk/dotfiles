@@ -1,1 +1,0 @@
-/home/mat/Themes/NewTheme/nvim.lua

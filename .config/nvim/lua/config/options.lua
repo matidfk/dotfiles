@@ -32,6 +32,10 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldlevelstart = 20
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
+vim.diagnostic.config {
+    update_in_insert = true
+}
+
 function _G.MyFoldText()
     return vim.fn.getline(vim.v.foldstart) .. ' ... ' .. vim.fn.getline(vim.v.foldend):gsub("^%s*", "")
 end

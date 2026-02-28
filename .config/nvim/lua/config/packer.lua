@@ -36,6 +36,17 @@ return require('packer').startup(function(use)
         },
     }
 
+    -- NvimCmp - autocompletion
+    use {
+        "hrsh7th/nvim-cmp",
+        requires = {
+            "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp",
+            'hrsh7th/cmp-nvim-lua',
+            'octaltree/cmp-look', 'hrsh7th/cmp-path', 'hrsh7th/cmp-calc',
+            'f3fora/cmp-spell', 'hrsh7th/cmp-emoji', 'onsails/lspkind.nvim'
+        }
+    }
+    
     -- Color schemes
     use('ayu-theme/ayu-vim')
     use('joshdick/onedark.vim')
@@ -53,7 +64,7 @@ return require('packer').startup(function(use)
         require("toggleterm").setup {
             -- floating terminal
             direction = "float",
-            -- Ctrl + \ to open
+            -- Alt + enter
             open_mapping = [[<A-CR>]],
             -- Allow same shortcut to close
             terminal_mappings = true,
