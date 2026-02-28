@@ -122,6 +122,10 @@ tooltip label {
     color: #939baa;
 }
 
+#wireplumber.high {
+    color: @nord11;
+}
+
 #tray > * > * {
     padding: 0;
 }
