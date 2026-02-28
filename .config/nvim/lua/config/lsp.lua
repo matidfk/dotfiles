@@ -8,7 +8,7 @@ vim.lsp.enable('luals')
 
 vim.lsp.config('rust-analyzer', {
     cmd = { 'rust-analyzer' },
-    filetypes = { 'rs' },
+    filetypes = { 'rust' },
 })
 
 vim.lsp.enable('rust-analyzer')
