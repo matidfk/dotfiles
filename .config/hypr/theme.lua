@@ -1,7 +1,6 @@
 -----------------------
 ---- LOOK AND FEEL ----
 -----------------------
-
 hl.config({
     plugin = {
         hyprbars = {
@@ -9,6 +8,8 @@ hl.config({
         }
     }
 })
+
+
 hl.config({
     general = {
         gaps_in       = 7,
@@ -141,6 +142,7 @@ hl.window_rule({
 hl.config({
     plugin = {
         hyprbars = {
+            enabled = false,
             bar_height = 24,
             ["hyprbars-button"] = { "rgb(bf616a)", 12, "", "hyprctl dispatch killactive" },
             bar_color = "rgba(eceff4ea)",
