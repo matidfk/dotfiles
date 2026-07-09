@@ -1,0 +1,8 @@
+require('plugin.nvim-tree')
+require('plugin.nvim-autopairs')
+require('plugin.nvim-treesitter')
+require('plugin.comment')
+require('plugin.lualine')
+require('plugin.toggleterm')
+require('plugin.bufferline')
+require('plugin.nord-vim')

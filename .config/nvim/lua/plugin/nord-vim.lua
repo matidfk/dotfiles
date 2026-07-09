@@ -1,3 +1,7 @@
+vim.pack.add({ 'https://github.com/arcticicestudio/nord-vim' })
+
+vim.cmd('colorscheme nord')
+
 -- transparent background
 function TransparentBG()
   vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -10,3 +14,4 @@ function TransparentBG()
 end
 
 TransparentBG()
+

@@ -1,21 +1,21 @@
-require("nvim-tree").setup {
-    hijack_cursor = true,
+vim.pack.add({ 'https://github.com/nvim-tree/nvim-tree.lua', 'https://github.com/nvim-tree/nvim-web-devicons' })
 
-    modified = {
-        enable = true
-    },
+require('nvim-tree').setup({
+	hijack_cursor = true,
 
-    git = {
-        enable = false
-    },
+	modified = {
+		enable = true
+	}
+})
 
-    diagnostics = {
-        enable = true,
-        show_on_dirs = true,
-        show_on_open_dirs = false,
-    }
-}
+-- disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
+-- leader + e to open
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle <CR>")
+
+-- open on startup
 local function open_nvim_tree(data)
     -- buffer is a directory
     local directory = vim.fn.isdirectory(data.file) == 1
@@ -31,7 +31,4 @@ local function open_nvim_tree(data)
     require("nvim-tree.api").tree.open()
 end
 
--- open on startup
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
-
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle <CR>")
