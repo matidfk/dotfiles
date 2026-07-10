@@ -22,6 +22,7 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
+require('vim._core.ui2').enable({})
 
 vim.diagnostic.config({
     virtual_text = true
