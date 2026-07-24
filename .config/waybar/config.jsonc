@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
     "layer": "top",
-    "height": 30,
+    "height": 42,
     "spacing": 4,
     "output": "DP-3",
     "modules-left": [
@@ -61,7 +61,7 @@
     },
     "cpu": {
         "format": "   {usage}%",
-        "on-click": "hyprctl dispatch exec '[float; size 1280 720] kitty sh -c btop'"
+        "on-click": "hyprctl dispatch \"hl.dsp.exec_cmd('kitty sh -c btop', {float= true, size= {1280, 720}})\""
     },
     "memory": {
         "format": "  {}%"
@@ -77,7 +77,7 @@
     },
     "wireplumber": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon}   {volume}%",
+        "format": "{icon}    {volume}%",
         "format-bluetooth": "{volume}% {icon}",
         "format-bluetooth-muted": " {icon}",
         "format-muted": " Muted",
@@ -101,7 +101,7 @@
         "max-volume": 150.0
     },
     "custom/media": {
-        "format": "{text} {icon}",
+        "format": "{text}  {icon} ",
         "return-type": "json",
         "max-length": 40,
         "format-icons": {

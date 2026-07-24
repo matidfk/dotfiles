@@ -1,0 +1,10 @@
+[global]
+background = "#eceff4aa"
+foreground = "#4c566a"
+font = "Rubik"
+padding = 10
+corner_radius = 10
+frame_width = 2
+frame_color = "#2e3440"
+offset = (12, 12)
+timeout = 3

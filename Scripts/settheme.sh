@@ -24,6 +24,7 @@ files=(
   "kitty.conf           $config_dir/kitty/theme.conf"
   "bashprompt           $HOME/.bashprompt"
   "nvim.lua             $config_dir/nvim/config/theme.lua"
+  "wofi.css             $config_dir/nvim/wofi/style.css"
 )
 
 cd $themes_dir/$theme
@@ -60,6 +61,7 @@ message+=$(
 
    # Reload configs
   pkill waybar -USR2 2>&1
+  dunstctl reload
 )
 
 # Display error message if any

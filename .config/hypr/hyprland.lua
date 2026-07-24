@@ -131,7 +131,7 @@ local mainMod = "SUPER"
 
 -- Core operations
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + W", hl.dsp.window.close())
+hl.bind(mainMod .. " + TAB", hl.dsp.window.close())
 
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("hyprlock"))
 -- hl.bind(mainMod .. " + M", hl.dsp.exit())

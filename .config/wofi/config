@@ -1,7 +1,9 @@
 style = /home/mat/.config/wofi/style.css
 
-width = 700
-height = 400
+width = 50%
+height = 30%
+location = top
+y = 120
 
 show = drun
 prompt = Search...
@@ -13,4 +15,3 @@ halign = fill
 no_actions = true
 content_halign = fill
 allow_images = true
-image_size = true

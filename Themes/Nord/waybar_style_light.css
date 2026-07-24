@@ -20,14 +20,13 @@
 
 * {
     font-family: Rubik, FontAwesome;
-    font-weight: 500;
     font-size: 14px;
     text-shadow: none;
 }
 
 window#waybar {
-    background-color: #20242b;
-    color: @nord4;
+    background-color: @nord6;
+    color: @nord0;
 }
 
 window#waybar > box {
@@ -44,9 +43,9 @@ button {
 
 widget > * {
     padding: 0 10px;
-    color: @nord4;
+    color: @nord0;
     border-radius: 100px;
-    background-color: @nord0;
+    background-color: @nord4;
     margin: 0 2px;
 }
 
@@ -57,11 +56,11 @@ widget > * {
     padding: 2px 6px;
     margin: 0 2px;
     background-color: transparent;
-    color: @nord4;
+    color: @nord0;
 }
 
 #workspaces button:hover {
-    background: @nord3;
+    background: #c4cbd7;
     transition-duration: 0.1s;
 }
 
@@ -75,8 +74,8 @@ widget > * {
 }
 
 #workspaces button.focused, #workspaces button.active {
-    background-color: @nord6;
-    color: @nord0;
+    background-color: @nord0;
+    color: @nord6;
 }
 
 #workspaces button.urgent {
@@ -84,7 +83,7 @@ widget > * {
 }
 
 #workspaces button.empty {
-    color: #707b8f;
+    color: #939baa;
 }
 
 
@@ -103,7 +102,6 @@ tooltip label {
 
 #custom-power {
     padding-right: 13px;
-    color: @nord11
 }
 
 /* window title in middle */
@@ -144,20 +142,4 @@ tooltip label {
 
 #calendar {
     font-family: Rubik;
-}
-
-#custom-media {
-    color: @nord7;
-}
-
-#network {
-    color: @nord8;
-}
-
-#cpu {
-    color: @nord11;
-}
-
-#memory {
-    color: @nord12;
 }
