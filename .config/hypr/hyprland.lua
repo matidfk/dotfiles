@@ -16,15 +16,8 @@ require("theme")
 
 hl.monitor({
     output   = "DP-3",
-    mode     = "1920x1080@74.97",
+    mode     = "2560x1440@179.95",
     position = "0x0",
-    scale    = "1",
-})
-
-hl.monitor({
-    output   = "HDMI-A-2",
-    mode     = "1920x1080@60",
-    position = "1920x0",
     scale    = "1",
 })
 
@@ -41,18 +34,19 @@ local menu        = "wofi --show drun"
 -------------------
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd("waybar")
-    -- hl.exec_cmd("hyprpaper")
-    hl.exec_cmd("sleep 1; \"$HOME/.config/hypr/scripts/random_wallpaper.sh\"")
+    hl.exec_cmd("waybar") -- bar
+    hl.exec_cmd("dunst") -- notifications
+    hl.exec_cmd("hyprpaper") -- wallpaper
+    hl.exec_cmd("sleep 1; \"$HOME/.config/hypr/scripts/random_wallpaper.sh\"") -- apply random wallpaper
 
     hl.exec_cmd("udiskie")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
 
     -- Autostart apps silently onto targeted workspaces
-    hl.exec_cmd("hyprctl dispatch exec \"[workspace 2 silent] zen-browser\"")
-    hl.exec_cmd("hyprctl dispatch exec \"[workspace 6 silent] discord\"")
-    hl.exec_cmd("hyprctl dispatch exec \"[workspace special:magic silent; float; size 1280 720] kitty\"")
+    hl.exec_cmd("zen-browser", { workspace = "1 silent" })
+    hl.exec_cmd("discord", { workspace = "6 silent" })
+    hl.exec_cmd("kitty", { workspace = "special:magic silent", float = true, size = {1280, 720}})
 
     hl.exec_cmd("hyprpm enable hyprbars")
 end)
@@ -138,6 +132,8 @@ local mainMod = "SUPER"
 -- Core operations
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + W", hl.dsp.window.close())
+
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("hyprlock"))
 -- hl.bind(mainMod .. " + M", hl.dsp.exit())
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
@@ -159,16 +155,17 @@ hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
 
 -- Resize windows (Vim keys)
-hl.bind(mainMod .. " + CTRL + H", hl.dsp.window.resize({ x = -40, y = 0, true }))
-hl.bind(mainMod .. " + CTRL + J", hl.dsp.window.resize({ x = 0, y = 40, true }))
-hl.bind(mainMod .. " + CTRL + K", hl.dsp.window.resize({ x = 0, y = -40, true }))
-hl.bind(mainMod .. " + CTRL + L", hl.dsp.window.resize({ x = 40, y = 0, true }))
+local resizeUnit = 40
+hl.bind(mainMod .. " + CTRL + H", hl.dsp.window.resize({ x = -resizeUnit, y = 0, relative = true }), {repeating = true})
+hl.bind(mainMod .. " + CTRL + J", hl.dsp.window.resize({ x = 0, y = resizeUnit, relative = true }), {repeating = true})
+hl.bind(mainMod .. " + CTRL + K", hl.dsp.window.resize({ x = 0, y = -resizeUnit, relative = true }), {repeating = true})
+hl.bind(mainMod .. " + CTRL + L", hl.dsp.window.resize({ x = resizeUnit, y = 0, relative = true }), {repeating = true})
 
 -- Workspaces: Switch & Move Silent
 for i = 1, 10 do
     local key = i % 10 -- Maps 10 to 0
     hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i, silent = true }))
+    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
 -- Special workspace (Scratchpad)
@@ -209,11 +206,8 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 --------------------------------
 
 -- Bind workspaces to specific monitors
-for w = 1, 5 do
+for w = 1, 10 do
     hl.workspace_rule({ workspace = tostring(w), monitor = "DP-3" })
-end
-for w = 6, 10 do
-    hl.workspace_rule({ workspace = tostring(w), monitor = "HDMI-A-2" })
 end
 
 -- Suppress maximize events
@@ -228,6 +222,18 @@ hl.window_rule({
     name  = "floating-pip",
     match = { title = "(Picture-in-Picture)" },
     float = true,
+})
+
+-- discord
+hl.window_rule({
+    match = { class = "discord" },
+    workspace = "6 silent",
+})
+
+-- zen
+hl.window_rule({
+    match = { class = "zen" },
+    workspace = "2 silent",
 })
 
 -- Show title bars only on floating windows (Disabling hyprbars on tiled)
@@ -250,10 +256,19 @@ hl.window_rule({
 })
 
 -- Gapless with only 1 window
-hl.workspace_rule({ workspace = "w[t1]", gaps_out = 0, gaps_in = 0 })
+hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
+hl.workspace_rule({ workspace = "f[1]", gaps_out = 0, gaps_in = 0 })
 
 hl.window_rule({
-    name     = "single-window-gapless",
-    match    = { workspace = "w[t1]" },
+    name     = "no-gaps-wtv1",
+    match    = { workspace = "w[tv1]" },
     rounding = 0,
+    border_size = 0
+})
+
+hl.window_rule({
+    name     = "no-gaps-f1",
+    match    = { workspace = "f[1]" },
+    rounding = 0,
+    border_size = 0
 })

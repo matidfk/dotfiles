@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
-require("config.plugins")
 require("config.options")
 require("config.keymaps")
 require("config.lsp")
+require("config.theme")

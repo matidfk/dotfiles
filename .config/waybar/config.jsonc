@@ -6,7 +6,7 @@
     "output": "DP-3",
     "modules-left": [
         "hyprland/workspaces",
-        "custom/media",
+        "custom/media"
     ],
     "modules-center": [
         "hyprland/window"
@@ -33,10 +33,10 @@
             // "3": "",
             // "6": "",
             // "7": "",
-        },
+        }
     },
     "tray": {
-        "spacing": 6,
+        "spacing": 6
     },
     "clock": {
         "tooltip-format": "<tt><span font='Jetbrains Mono'>{calendar}</span></tt>",
@@ -50,7 +50,7 @@
                 "weekdays": "<span color='#4C566A'>{}</span>",
                 "months": "<span color='#4C566A'>{}</span>",
                 "today": "<span color='#2E3440'><b><u>{}</u></b></span>"
-            },
+            }
 
         },
         "actions": {
@@ -98,7 +98,7 @@
         "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "hyprctl dispatch exec [float] pavucontrol",
         "scroll-step": 5.0,
-        "max-volume": 150.0,
+        "max-volume": 150.0
     },
     "custom/media": {
         "format": "{text} {icon}",
@@ -129,6 +129,6 @@
         "return-type": "json",
         "on-click": "playerctl play-pause",
         "on-scroll-up": "playerctl next",
-        "on-scroll-down": "playerctl previous",
-    },
+        "on-scroll-down": "playerctl previous"
+    }
 }

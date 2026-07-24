@@ -17,20 +17,13 @@ if [ ! -d "$themes_dir/$theme" ]; then
 fi
 
 files=(
-  "waybar.css"    $config_dir/waybar/style.css"
-  "hyprland.conf" $config_dir/hypr/theme.conf"
-  "dunstrc        $config_dir/dunst/dunstrc"
-  "kitty.conf     $config_dir/kitty/theme.conf"
-  # "picom.conf     $config_dir/picom/picom.conf"
-  # "polybar.ini    $config_dir/polybar/config.ini"
-  # "rofi.rasi      $config_dir/rofi/config.rasi"
-  # "launcher.rasi  $config_dir/rofi/launcher.rasi"
-  # "powermenu.rasi $config_dir/rofi/powermenu.rasi"
-  "wofi poo"
-  # "conky.conf     $config_dir/conky/conky.conf"
-  "bashprompt     $HOME/.bashprompt"
-  # "bspwmthemerc   $config_dir/bspwm/themerc"
-  "nvim.lua       $config_dir/nvim/after/plugin/colorscheme.lua"
+  "waybar_style.css     $config_dir/waybar/style.css"
+  "hyprland.lua         $config_dir/hypr/theme.lua"
+  "hyprlock.conf        $config_dir/hypr/hyprlock.conf"
+  "dunstrc              $config_dir/dunst/dunstrc"
+  "kitty.conf           $config_dir/kitty/theme.conf"
+  "bashprompt           $HOME/.bashprompt"
+  "nvim.lua             $config_dir/nvim/config/theme.lua"
 )
 
 cd $themes_dir/$theme
@@ -65,18 +58,8 @@ message+=$(
   sudo rm -r /usr/share/wallpapers/* 2>&1
   sudo cp Wallpapers/* "/usr/share/wallpapers" 2>&1
 
-
-  bspc config top_padding 0
-  bspc config bottom_padding 0
-
    # Reload configs
-  pkill kitty -USR1 2>&1
-  pkill dunst -USR1 2>&1
-  pkill conky -USR1 2>&1
-  pkill polybar -USR1 2>&1
-  pkill picom -USR1 2>&1
-  $HOME/.fehbg 2>&1
-  $HOME/.config/bspwm/themerc 2>&1
+  pkill waybar -USR2 2>&1
 )
 
 # Display error message if any

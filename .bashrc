@@ -24,7 +24,6 @@ alias fuck='sudo $(history -p \!\!)'
 alias whysomuchspace='sudo du -h --max-depth=1 | sort -h'
 alias dotfiles='git --git-dir=$HOME/dotfiles.git --work-tree=$HOME'
 alias fixbrightness='sudoedit /sys/class/backlight/amdgpu_bl0/brightness'
-alias waybar-reload='pkill waybar && hyprctl dispatch exec waybar'
 
 #[[ -f ~/.bashprompt ]] && . ~/.bashprompt
 
