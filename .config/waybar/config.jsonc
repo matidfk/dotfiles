@@ -40,6 +40,7 @@
     "clock": {
         "tooltip-format": "<tt><span font='Jetbrains Mono'>{calendar}</span></tt>",
         "format-alt": "{:%A, %d. %B %Y}",
+        "format": "<span font='14' rise='-1500'>󰥔 </span>{:%H:%M}",
         "calendar": {
             "mode": "year",
             "mode-mon-col": 3,
@@ -59,15 +60,15 @@
 
     },
     "cpu": {
-        "format": "   {usage}%",
+        "format": "<span font='14' rise='-1500'> </span> {usage}%",
         "on-click": "hyprctl dispatch \"hl.dsp.exec_cmd('kitty sh -c btop', {float= true, size= {1280, 720}})\""
     },
     "memory": {
-        "format": "  {}%"
+        "format": "<span font='14' rise='-1500'> </span>{}%"
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "    {essid} ({signalStrength}%)",
+        "format-wifi": "<span font='14' rise='-1500'>󰤥 </span> {essid} ({signalStrength}%)",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
@@ -76,10 +77,10 @@
     },
     "wireplumber": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon}    {volume}%",
+        "format": "<span font='14' rise='-1500'>{icon}</span>      {volume}%",
         "format-bluetooth": "{volume}% {icon}",
         "format-bluetooth-muted": " {icon}",
-        "format-muted": " Muted",
+        "format-muted": "<span font='14' rise='-1500'> </span>Muted",
         "format-source": " {volume}%",
         "format-source-muted": "",
         "format-icons": {
