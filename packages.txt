@@ -1,0 +1,28 @@
+# desktop environment
+hyprland
+hyprpaper
+wofi
+dunst
+# waybar
+
+kitty
+neovim
+
+
+# fonts
+ttc-iosevka
+ttf-nerd-fonts-symbols
+ttf-font-awesome
+ttf-roboto
+ttf-cascadia-code-nerd
+
+
+# applications
+steam
+reaper
+discord
+zen
+
+
+# utils
+btop
