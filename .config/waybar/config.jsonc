@@ -6,7 +6,7 @@
     "output": "DP-3",
     "modules-left": [
         "hyprland/workspaces",
-        "custom/media"
+        "mpris"
     ],
     "modules-center": [
         "hyprland/window"
@@ -99,6 +99,21 @@
         "on-click-right": "hyprctl dispatch exec [float] pavucontrol",
         "scroll-step": 5.0,
         "max-volume": 150.0
+    },
+    "mpris": {
+        "format": "{status_icon}   {dynamic}  {player_icon}",
+        "format-paused": "{status_icon}   {dynamic}  {player_icon}",
+        "dynamic-order": ["artist", "title"],
+        /* "dynamic-order": ["artist", "title", "position", "length"], */
+        "player-icons": {
+            "default": " ",
+            "mpv": "🎵",
+            "spotify": " "
+        },
+        "status-icons": {
+            "paused": " ",
+            "playing": " "
+        }
     },
     "custom/media": {
         "format": "{text}  {icon} ",
