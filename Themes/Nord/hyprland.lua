@@ -1,14 +1,6 @@
 -----------------------
 ---- LOOK AND FEEL ----
 -----------------------
--- hl.config({
---     plugin = {
---         hyprbars = {
---             enabled = false,
---         }
---     }
--- })
-
 
 hl.config({
     general = {
@@ -137,18 +129,28 @@ hl.window_rule({
 ---- PLUGINS ----
 -----------------
 
--- hl.config({
---     plugin = {
---         hyprbars = {
---             enabled = false,
---             bar_height = 24,
---             ["hyprbars-button"] = { "rgb(bf616a)", 12, "", "hyprctl dispatch killactive" },
---             bar_color = "rgba(eceff4ea)",
---             col = {
---                 text = "rgb(2e3440)",
---             },
---             bar_blur = true,
---             bar_precedence_over_border = false,
---         },
---     },
--- })
+hl.config({
+    plugin = {
+        hyprbars = {
+            bar_height = 24,
+            ["hyprbars-button"] = { "rgb(bf616a)", 12, "", "hyprctl dispatch killactive" },
+            bar_color = "rgba(eceff4ea)",
+            col = {
+                text = "rgb(2e3440)",
+            },
+            bar_text_size = 12,
+            bar_text_font = "Rubik",
+            bar_text_weight = "medium",
+            bar_blur = false,
+            bar_precedence_over_border = false,
+        },
+    },
+})
+
+-- Show title bars only on floating windows (Disabling hyprbars on tiled)
+hl.window_rule({
+    name  = "floating-only-bars",
+    match = { float = false },
+    ["hyprbars:no_bar"] = "true",
+})
+

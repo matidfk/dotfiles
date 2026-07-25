@@ -237,13 +237,13 @@ hl.window_rule({
 })
 
 -- Show title bars only on floating windows (Disabling hyprbars on tiled)
-hl.window_rule({
-    name  = "floating-only-bars",
-    match = { float = false },
-    -- hyprbars = {
-    --     no_bar = true,
-    -- },
-})
+-- hl.window_rule({
+--     name  = "floating-only-bars",
+--     match = { float = false },
+--     hyprbars = {
+--         no_bar = true,
+--     },
+-- })
 
 -- Color SSH Windows
 hl.window_rule({
