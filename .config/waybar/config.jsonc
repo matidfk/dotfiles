@@ -69,11 +69,13 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "<span font='14' rise='-1500'>󰤥 </span> {essid} ({signalStrength}%)",
-        "format-ethernet": "{ipaddr}/{cidr} ",
+        // "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-ethernet": " {bandwidthDownBits:ki}Kb   {bandwidthUpBits:ki}Kb",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "interval": 3
     },
     "wireplumber": {
         // "scroll-step": 1, // %, can be a float

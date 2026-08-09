@@ -10,6 +10,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("waybar") -- bar
     hl.exec_cmd("dunst") -- notifications
     hl.exec_cmd("hyprpaper") -- wallpaper
+    hl.exec_cmd("/home/mat/scripts/google-drive-pull.sh") -- wallpaper
     hl.exec_cmd("sleep 1; \"$HOME/.config/hypr/scripts/random_wallpaper.sh\"") -- apply random wallpaper
 
     hl.exec_cmd("udiskie")

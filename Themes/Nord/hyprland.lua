@@ -141,10 +141,26 @@ hl.config({
             bar_text_size = 12,
             bar_text_font = "Rubik",
             bar_text_weight = "medium",
-            bar_blur = false,
+            bar_blur = true,
             bar_precedence_over_border = false,
         },
     },
+})
+
+hl.plugin.hyprbars.add_button({
+    bg_color = "rgb(bf616a)",
+    fg_color = "rgb(bf616a)",
+    size = 12,
+    icon = "",
+    action = "hyprctl dispatch 'hl.dsp.window.close()'"
+})
+
+hl.plugin.hyprbars.add_button({
+    bg_color = "rgb(ebcb8b)",
+    fg_color = "rgb(ebcb8b)",
+    size = 12,
+    icon = "",
+    action = "hyprctl dispatch 'hl.dsp.window.fullscreen()'"
 })
 
 -- Show title bars only on floating windows (Disabling hyprbars on tiled)
