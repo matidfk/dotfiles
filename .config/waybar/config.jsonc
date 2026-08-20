@@ -70,7 +70,7 @@
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "<span font='14' rise='-1500'>󰤥 </span> {essid} ({signalStrength}%)",
         // "format-ethernet": "{ipaddr}/{cidr} ",
-        "format-ethernet": " {bandwidthDownBits:ki}Kb   {bandwidthUpBits:ki}Kb",
+        "format-ethernet": " {bandwidthDownBits:ki}Kb   {bandwidthUpBits:ki}Kb",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",

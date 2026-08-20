@@ -37,7 +37,7 @@ window#waybar > box {
 button {
     box-shadow: none;
     border: none;
-    border-radius: 100px;
+    border-radius: 10px;
 }
 
 
@@ -45,7 +45,7 @@ button {
 widget > * {
     padding: 0 10px;
     color: @nord4;
-    border-radius: 100px;
+    border-radius: 10px;
     background-color: @nord0;
     margin: 0 2px;
 }
