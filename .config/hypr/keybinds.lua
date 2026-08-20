@@ -43,8 +43,9 @@ for i = 1, 10 do
     hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
+-- Alt+Tab
 hl.bind("ALT + TAB", hl.dsp.focus({ workspace = "e+1"}))
-hl.bind("ALT + SHIFT + TAB", hl.dsp.focus({ workspace = "e+1"}))
+hl.bind("ALT + SHIFT + TAB", hl.dsp.focus({ workspace = "e-1"}))
 
 -- Special workspace (Scratchpad)
 hl.bind(mainMod .. " + RETURN", hl.dsp.workspace.toggle_special("magic"))
