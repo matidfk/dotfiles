@@ -64,7 +64,7 @@ hl.config({
 
 hl.config({
     input = {
-        kb_layout          = "gb",
+        kb_layout          = "gb,cz",
         kb_variant         = "",
         kb_model           = "",
         kb_options         = "",

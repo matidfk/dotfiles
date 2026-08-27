@@ -78,3 +78,10 @@ hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+
+
+-- Switch keyboard input language
+hl.bind(
+    mainMod .. " + ALT + L",
+    hl.dsp.exec_cmd("hyprctl switchxkblayout all next; notify-send -t 500 \"Switched input language to $(hyprctl devices | grep keymap | head -1 | cut -d: -f2- | xargs)\"")
+)
