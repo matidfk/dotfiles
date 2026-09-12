@@ -16,6 +16,7 @@
         "cpu",
         "memory",
         "clock",
+        "custom/googledrive",
         "tray",
         "custom/power"
     ],
@@ -137,6 +138,11 @@
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
 		}
+    },
+    "custom/googledrive": {
+        "format" : "",
+		"tooltip": false,
+        "on-click": "sh /home/mat/Scripts/google-drive-bisync.sh"
     },
     "custom/spotify": {
         "exec": "/usr/bin/python3 $HOME/.config/waybar/custom_modules/mediaplayer.py --player spotify",

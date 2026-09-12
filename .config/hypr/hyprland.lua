@@ -18,8 +18,9 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
 
     -- Autostart apps silently onto targeted workspaces
-    hl.exec_cmd("zen-browser", { workspace = "1 silent" })
+    hl.exec_cmd("zen-browser", { workspace = "2 silent" })
     hl.exec_cmd("discord", { workspace = "6 silent" })
+    hl.exec_cmd("steam -silent", { workspace = "8 silent"})
     hl.exec_cmd("kitty", { workspace = "special:magic silent", float = true, size = {1280, 720}})
 
     hl.exec_cmd("hyprpm enable hyprbars")

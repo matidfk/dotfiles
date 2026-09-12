@@ -1,12 +1,12 @@
 [global]
-background = "#2e3440"
-foreground = "#d8dee9"
-font = "Rubik"
-padding = 20
-origin = top-right
-offset = (50, 50)
-horizontal_padding = 20
-corner_radius = 15
-frame_width = 2
-frame_color = "#434c5e"
-timeout = 3
+    background = "#2e3440"
+    foreground = "#d8dee9"
+    font = "Rubik"
+    padding = 20
+    origin = top-right
+    offset = (50, 50)
+    horizontal_padding = 20
+    corner_radius = 15
+    frame_width = 2
+    frame_color = "#434c5e"
+    timeout = 3
