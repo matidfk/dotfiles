@@ -106,6 +106,10 @@ tooltip label {
     color: @nord11
 }
 
+#custom-googledrive {
+    color: @nord13
+}
+
 /* window title in middle */
 #window {
     background-color: inherit;

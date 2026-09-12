@@ -140,9 +140,12 @@
 		}
     },
     "custom/googledrive": {
-        "format" : "",
+        "format" : "{}",
 		"tooltip": false,
-        "on-click": "sh /home/mat/Scripts/google-drive-bisync.sh"
+        "interval": "once",
+        "on-click": "sh /home/mat/Scripts/google-drive-bisync.sh",
+        "signal": 10,
+        "exec": "sleep 0.1; pgrep -x rclone >/dev/null && echo '  Syncing...' || echo ''; pkill -SIGRTMIN+10 waybar"
     },
     "custom/spotify": {
         "exec": "/usr/bin/python3 $HOME/.config/waybar/custom_modules/mediaplayer.py --player spotify",
