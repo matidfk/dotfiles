@@ -1,0 +1,16 @@
+style = /home/mat/.config/wofi/style_powermenu.css
+
+width = 115
+height = 380
+location = top_right
+hide_search = true
+close_on_focus_loss = true
+x = -50
+y = 50
+
+insensitive = true
+hide_scroll = true
+
+
+content_halign = center
+allow_images = true
