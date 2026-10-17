@@ -154,6 +154,14 @@ tooltip label {
     color: @nord7;
 }
 
+#battery {
+    color: @nord14;
+}
+
+#battery.critical {
+    color: @nord11;
+}
+
 #network {
     color: @nord8;
 }

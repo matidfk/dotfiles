@@ -140,7 +140,7 @@ hl.config({
             },
             bar_text_size = 12,
             bar_text_font = "Rubik",
-            bar_text_weight = "medium",
+            -- bar_text_weight = "medium",
             bar_blur = true,
             bar_precedence_over_border = false,
         },
