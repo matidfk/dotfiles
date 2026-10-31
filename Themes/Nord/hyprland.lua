@@ -12,8 +12,6 @@ hl.config({
             active_border   = { colors = { "rgb(eceff4)", "rgb(e5e9f0)" }, angle = 45 },
             inactive_border = "rgba(2e3440ff)",
         },
-
-        allow_tearing = false,
     },
 })
 
@@ -170,3 +168,7 @@ hl.window_rule({
     ["hyprbars:no_bar"] = "true",
 })
 
+hl.window_rule({
+    match = { float = true },
+    rounding = 12
+})
